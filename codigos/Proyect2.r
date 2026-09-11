@@ -44,7 +44,7 @@ library(nnet)
 library(randomForestSRC)
 ######################################################
 # Leer los datos
-df <- read.xlsx('GUIA-1.xlsx')
+df <- read.xlsx('../datos/bases/GUIA-1.xlsx')
 head(df)
 
 ######################################################
@@ -118,7 +118,7 @@ piePlot2 <- ggplot(proporciones, aes(x = "", y = proporcion, fill = factor(GENER
         legend.spacing.x = unit(1, "cm"))
 
 piePlots <- grid.arrange(piePlot1, piePlot2, widths = c(0.5, 0.5), ncol = 2)
-ggsave("pieChart.jpg", width = 10, height = 6, units = "in", plot = piePlots, dpi = 300)
+ggsave("../datos/resultados/pieChart.jpg", width = 10, height = 6, units = "in", plot = piePlots, dpi = 300)
 
 
 # Gráfico pairs
@@ -127,7 +127,7 @@ pairs(select(df, c(-1, -3, -10, -4, -9,
                     -18, -20, -21, -23, -24, 
                     -25, -13, -14, -16, -19)), 
       main = "Dispersión de datos")
-dev.copy(png, "pairsPlot.jpg")
+dev.copy(png, "../datos/resultados/pairsPlot.jpg")
 dev.off()
 
 
@@ -180,7 +180,7 @@ barPlot3 <- ggplot(df, aes(x = ETNIA, fill = factor(RESULTADO))) +
 
 
 barPlots <- grid.arrange(barPlot1, barPlot2, barPlot3, widths = c(0.33, 0.33, 0.34), ncol = 3)
-ggsave("barpPlot.jpg", width = 10, height = 6, units = "in", plot = barPlots, dpi = 300)
+ggsave("../datos/resultados/barpPlot.jpg", width = 10, height = 6, units = "in", plot = barPlots, dpi = 300)
 ######################################################
 
 # Función para estandarizar los datos
@@ -546,7 +546,7 @@ learnRate <- ggplot() +
       legend.spacing.y = unit(0.8, "lines"),
       plot.title = element_text(size = 25))
 
-ggsave("learningRate.jpg", width = 10, height = 8, units = "in", plot = learnRate, dpi = 300)
+ggsave("../datos/resultados/learningRate.jpg", width = 10, height = 8, units = "in", plot = learnRate, dpi = 300)
 ################################################
 # Graficar la curva ROC
 rocPlot <- ggplot() +
@@ -575,6 +575,6 @@ rocPlot <- ggplot() +
       plot.title = element_text(size = 25))
 
 
-ggsave("rocCurve.jpg", width = 10, height = 8, units = "in", plot = rocPlot, dpi = 300)
+ggsave("../datos/resultados/rocCurve.jpg", width = 10, height = 8, units = "in", plot = rocPlot, dpi = 300)
 
 #

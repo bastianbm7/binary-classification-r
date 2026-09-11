@@ -15,17 +15,23 @@ Freelance project applying and comparing multiple binary classification algorith
 
 R — `tidyverse`, `caret`, `xgboost`, `e1071`, `nnet`, `randomForestSRC`, `pROC`, `ggplot2`, `gridExtra`, `openxlsx`.
 
+## Results
+
+| ROC curve | Learning curve |
+|---|---|
+| ![ROC curve](datos/resultados/rocCurve.jpg) | ![Learning curve](datos/resultados/learningRate.jpg) |
+
 ## Project structure
 
 ```
-Proyect2.r          # Full pipeline: setup, EDA, PCA, modeling, evaluation
-GUIA-1.xlsx         # Source survey dataset
-rocCurve.jpg, learningRate.jpg, pairsPlot.jpg / pairs_plot.png, barpPlot.jpg, pieChart.jpg
+codigos/Proyect2.r          # Full pipeline: setup, EDA, PCA, modeling, evaluation
+datos/bases/GUIA-1.xlsx     # Source survey dataset
+datos/resultados/           # rocCurve, learningRate, pairsPlot, barpPlot, pieChart
 ```
 
 ## How to run
 
-Open `Proyect2.r` in RStudio (or run with `Rscript`) and run it top to bottom — it's self-contained. It calls a `verificar_paquetes()` helper at the top that automatically installs any of the required packages that aren't already present, so a fresh R environment is enough to get started. Update the `setwd('PATH')` call at the top of the script to point at this project's folder before running (the path to `GUIA-1.xlsx` inside the script is already relative).
+Open `codigos/Proyect2.r` in RStudio (or run with `Rscript`) — it's self-contained and reads/writes relative to its own folder (`../datos/bases/`, `../datos/resultados/`). It calls a `verificar_paquetes()` helper at the top that automatically installs any of the required packages that aren't already present, so a fresh R environment is enough to get started. Update the `setwd('PATH')` call at the top of the script to point at `codigos/` before running.
 
 ## Notes from a static review
 
